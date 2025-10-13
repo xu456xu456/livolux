@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LIVOLUX — Future Living Aesthetics · AI Lighting Concept</title>
+  <meta name="description" content="LIVOLUX — A future living aesthetics & AI lighting brand concept. Minimal, luminous, and human‑centric. Domain available for acquisition." />
+  <meta name="color-scheme" content="dark light" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&family=Noto+Sans+SC:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0a0b0f;
+      --ink:#eef2f8;
+      --muted:#a7b1c3;
+      --line:#182033;
+      --panel:#0e1118;
+      --glow:#c5d9ff;
+      --accent:#ffd166; /* warm gold */
+      --accent2:#6ea8ff; /* cool blue */
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,"Noto Sans SC",system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #10172b 10%, transparent 60%),
+        radial-gradient(1000px 500px at 110% 10%, #120e22 10%, transparent 60%),
+        var(--bg);
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+    .grid-bg::before{
+      content:""; position:fixed; inset:0; pointer-events:none; z-index:-1;
+      background:
+        linear-gradient(transparent 0 49%, rgba(110,168,255,.08) 50% 51%, transparent 52% 100%),
+        linear-gradient(90deg, transparent 0 49%, rgba(255,209,102,.06) 50% 51%, transparent 52% 100%);
+      background-size:54px 54px;
+      mask: radial-gradient(900px 420px at 50% -10%, #000 0 70%, transparent 80% 100%);
+      animation: drift 22s linear infinite;
+    }
+    @keyframes drift{to{transform:translateY(58px)}}
+    .container{max-width:1160px; margin:0 auto; padding:0 22px}
+    .topbar{position:sticky; top:0; backdrop-filter:saturate(140%) blur(10px); background:linear-gradient(180deg,#0b0e14e6 0 60%, transparent); border-bottom:1px solid var(--line); z-index:10}
+    .note{padding:10px 0; font-size:12px; color:var(--muted); text-align:center}
+    header{display:flex; align-items:center; justify-content:space-between; padding:18px 0}
+    .logo{font-weight:800; letter-spacing:.6px; font-size:22px; text-transform:uppercase; background:linear-gradient(135deg,var(--accent),var(--accent2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
+    .btn{display:inline-block; padding:10px 14px; border-radius:12px; text-decoration:none; font-weight:700; border:1px solid var(--line); color:var(--ink); background:#0d121c}
+    .btn.primary{background:linear-gradient(135deg, #ffe08a, #8fb4ff); color:#0a0b0f; border:none; box-shadow:0 10px 28px rgba(110,168,255,.25), 0 0 0 1px rgba(255,209,102,.14) inset}
+    .btn.ghost{background:#0d121c; color:var(--ink)}
+    .hero{display:grid; grid-template-columns:1.1fr .9fr; gap:22px; align-items:center; padding:54px 0 26px}
+    .kicker{display:inline-flex; gap:8px; align-items:center; padding:6px 10px; border-radius:999px; font-size:12px; color:#c9d6ef; border:1px solid #1a2440; background:#0f1626}
+    .title{font-size:46px; line-height:1.06; margin:10px 0 12px; letter-spacing:-.3px}
+    .lead{font-size:18px; color:var(--muted); max-width:58ch}
+    .panel{background:var(--panel); border-radius:16px; padding:16px; border:1px solid var(--line); position:relative}
+    .panel::before{content:""; position:absolute; inset:0; border-radius:16px; padding:1px; background:linear-gradient(135deg, #2b3a57, #1b2435); -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; opacity:.35}
+    .hero-card{aspect-ratio:4/3; display:grid; place-items:center; border-radius:14px; background:radial-gradient(120px 80px at 20% 20%, rgba(197,217,255,.2), transparent 60%), radial-gradient(220px 160px at 80% 70%, rgba(255,209,102,.2), transparent 60%), #0c121c}
+    .section{padding:34px 0}
+    .grid2{display:grid; gap:14px; grid-template-columns:repeat(2,1fr)}
+    .grid3{display:grid; gap:14px; grid-template-columns:repeat(3,1fr)}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid2,.grid3{grid-template-columns:1fr}.title{font-size:34px}}
+    h2{margin:0 0 12px; font-size:20px}
+    .card{background:#0c111a; border:1px solid var(--line); border-radius:14px; padding:14px}
+    .muted{color:var(--muted)}
+    .divider{height:1px; background:linear-gradient(90deg, transparent, #1d2744, transparent); margin:16px 0}
+    footer{padding:30px 0 46px; color:var(--muted); font-size:12px; text-align:center; border-top:1px solid var(--line)}
+    code.k{padding:2px 6px; border-radius:6px; background:#0f1728; border:1px solid var(--line); font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size:12px; color:#cfe3ff}
+    .ribbon{position:fixed; right:16px; top:88px; z-index:20}
+    .ribbon a{display:inline-block; padding:8px 12px; border-radius:10px; text-decoration:none; background:#0a1420; color:#dbe7ff; border:1px solid #173153}
+    .ribbon a strong{background:linear-gradient(135deg, #ffe08a, #8fb4ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
+    .cn{font-size:12px; color:#b7c6da; margin-top:8px}
+  </style>
+</head>
+<body class="grid-bg">
+  <div class="ribbon">
+    <a href="mailto:xu456xu@gmail.com?subject=Livolux.com acquisition">Domain <strong>Livolux.com</strong> is available</a>
+  </div>
+  <div class="topbar">
+    <div class="container">
+      <div class="note">LIVOLUX — Future Living Aesthetics · AI Lighting Concept · 联系：<a style="color:#8fb4ff" href="mailto:xu456xu@gmail.com">xu456xu@gmail.com</a></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <header>
+      <div class="logo">LIVOLUX</div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        <a class="btn primary" href="mailto:xu456xu@gmail.com?subject=Request brand deck — LIVOLUX">Request deck</a>
+        <a class="btn ghost" href="#about">About</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <span class="kicker">未来生活美学 · AI 照明品牌概念</span>
+        <h1 class="title">Light, intelligently. <br/>Live, beautifully.</h1>
+        <p class="lead">LIVOLUX explores human‑centric illumination powered by AI — adaptive scenes, circadian comfort, and responsive design. Minimal hardware; maximal atmosphere.</p>
+        <div style="display:flex; gap:10px; margin-top:14px; flex-wrap:wrap">
+          <a class="btn primary" href="mailto:xu456xu@gmail.com?subject=Acquire Livolux.com">Acquire Livolux.com</a>
+          <a class="btn" href="#features">See features</a>
+        </div>
+        <div class="cn">（中文注释）极简、高级、有温度的 AI 照明美学品牌概念，支持合作与收购。</div>
+      </div>
+      <div class="panel hero-card">
+        <div style="text-align:center">
+          <div class="muted" style="margin-bottom:8px">Human‑Centric · Minimal · Luminous</div>
+          <div style="font-weight:800; font-size:26px; background:linear-gradient(135deg,var(--accent),var(--accent2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">LIVOLUX</div>
+          <div class="muted" style="margin-top:6px; font-size:13px">A future living aesthetics & AI lighting concept.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="features" class="section">
+      <h2>Signature Features</h2>
+      <div class="grid3">
+        <div class="card">
+          <h3 style="margin:0 0 6px; font-size:16px">Adaptive Scenes</h3>
+          <p class="muted" style="margin:0; font-size:14px">Auto‑tunes intensity & color via sensors, time, and presence.</p>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 6px; font-size:16px">Circadian Care</h3>
+          <p class="muted" style="margin:0; font-size:14px">Supports natural rhythms for focus, rest, and wellbeing.</p>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 6px; font-size:16px">Design‑First</h3>
+          <p class="muted" style="margin:0; font-size:14px">Hidden tech, tactile surfaces, and architectural harmony.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About the Concept</h2>
+      <div class="grid2">
+        <div class="card">
+          <h3 style="margin:0 0 6px; font-size:16px">What is LIVOLUX?</h3>
+          <p class="muted" style="margin:0; font-size:14px">A brand vision merging AI with lighting to elevate daily rituals — reading, cooking, resting — through responsive ambience.</p>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 6px; font-size:16px">Use Cases</h3>
+          <p class="muted" style="margin:0; font-size:14px">Smart home, hospitality, wellness spaces, premium retail, and creative studios.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Acquisition</h2>
+      <div class="card">
+        <p style="margin:0 0 6px"><strong>Domain:</strong> Livolux.com — short, premium, and globally pronounceable.</p>
+        <p style="margin:0 0 6px">Suggested list: <strong>¥4,999 CNY</strong> (≈ $690 USD). Negotiable with escrow.</p>
+        <p style="margin:0">Contact: <a style="color:#8fb4ff" href="mailto:xu456xu@gmail.com"><strong>xu456xu@gmail.com</strong></a></p>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> LIVOLUX — Concept landing</div>
+      <div style="margin-top:6px">Local views: <code class="k" id="pv">0</code> · Last visit: <code class="k" id="lv">-</code></div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+    try{
+      const k1='lvx_pv', k2='lvx_lv';
+      const pv=Number(localStorage.getItem(k1)||0)+1;
+      localStorage.setItem(k1,pv);
+      const last=localStorage.getItem(k2);
+      document.getElementById('pv').textContent=pv.toString();
+      document.getElementById('lv').textContent= last? new Date(Number(last)).toLocaleString(): '首次访问';
+      localStorage.setItem(k2, Date.now().toString());
+    }catch(e){}
+  </script>
+</body>
+</html>
